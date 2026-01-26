@@ -20,17 +20,19 @@ function gsapFadeIn(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     gsap.fromTo(
       el,
-      { opacity: 0, y: 50 },
+      { opacity: 0, y: 50, filter: "blur(10px)"},
       {
         opacity: 1,
         y: 0,
+        filter: "blur(0px)",
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: el,
           start: "top 85%",
-          toggleActions: "play none none none",
+          toggleActions: "play none none reverse",
         },
+        clearProps: "filter" 
       }
     );
   });
@@ -139,7 +141,7 @@ function gsapFlipVerticalLeft(selector) {
 function gsapRotateBottomLeft(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     gsap.from(el, {
-      rotation: -90,
+      rotation: -55,
       scale: 0.8,
       y: 50,
       opacity: 0,
@@ -149,7 +151,7 @@ function gsapRotateBottomLeft(selector) {
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
-        toggleActions: "play none none none",
+        toggleActions: "play none none reverse",
       },
     });
   });
@@ -158,7 +160,7 @@ function gsapRotateBottomLeft(selector) {
 function gsapRotateBottomRight(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     gsap.from(el, {
-      rotation: 90,
+      rotation: 55,
       scale: 0.8,
       y: 50,
       opacity: 0,
@@ -168,7 +170,7 @@ function gsapRotateBottomRight(selector) {
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
-        toggleActions: "play none none none",
+        toggleActions: "play none none reverse",
       },
     });
   });

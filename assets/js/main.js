@@ -39,19 +39,43 @@ document.addEventListener("DOMContentLoaded", () => {
   gsapRollInLeft(".roll-in-left");
   gsap_rotate_bl__float(".rotate-bl--float");
 
+  // 💫 Tạo sparkles
+  const sparkleContainer = document.querySelector(".sparkle-container");
+  for (let i = 0; i < 12; i++) {
+      const s = document.createElement("div");
+      s.classList.add("sparkle");
+      sparkleContainer.appendChild(s);
+      const x = Math.random() * 300;
+      const y = Math.random() * 400;
+      gsap.set(s, { x, y, opacity: 0.2 + Math.random() * 0.8, scale: 0.5 + Math.random() });
+      animateSparkle(s);
+  }
+
+  function animateSparkle(el) {
+    gsap.to(el, {
+        x: "+=" + (Math.random() * 100 - 50),
+        y: "+=" + (Math.random() * 100 - 50),
+        opacity: 0.3 + Math.random() * 0.7,
+        duration: 4 + Math.random() * 3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1
+    });
+  }
+
   const tl_dresscode = gsap.timeline({
     repeatDelay: 0,  // delay giữa các lần lặp
     defaults: { duration: .8, ease: "power2.out" }, // giá trị mặc định
     scrollTrigger: {
       trigger: ".color-palette",
-      start: "top 90%", // khi phần tử xuất hiện 80% trong viewport
+      start: "top 85%", // khi phần tử xuất hiện 80% trong viewport
     }
   });
 
   // Thêm các animation theo thứ tự
-  // tl_dresscode.from(".white", { x: -100, opacity: 0 })        // box đỏ bay xuống
-  //   .from(".off-white", { x: -100, opacity: 0 }, "-=0.3")       // box xanh bay từ trái
-  //   .from(".cream-linen", { x: -100, opacity: 0 }, "-=0.3");    // box xanh lá phóng to dần
+  tl_dresscode.from(".first", { x: -100, opacity: 0 })        // box đỏ bay xuống
+    .from(".second", { x: -100, opacity: 0 }, "-=0.3")       // box xanh bay từ trái
+    .from(".third", { x: -100, opacity: 0 }, "-=0.3");    // box xanh lá phóng to dần
 
   async function playMusic(e) {
     const music = document.getElementById('audio');
