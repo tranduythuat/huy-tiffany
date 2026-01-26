@@ -160,7 +160,7 @@ header {
 .hero {
   width: 100%;
   aspect-ratio: 500/750;
-  background: url("../../assets/images/hero_bg.png") no-repeat center/contain, url("../../assets/images/couple/IMG_1626.webp") no-repeat center/cover;
+  background: url("../../assets/images/hero_bg.png") no-repeat center/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/tu-huy/IMG_1626.webp") no-repeat center/cover;
 }
 .hero .content {
   width: 100%;
