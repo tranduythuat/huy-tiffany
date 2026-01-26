@@ -1,0 +1,26 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.highlight {
+    width: 100%;
+    .content {
+        width: 100%;
+        aspect-ratio: 500 / 600;
+        position: relative;
+
+        img.highlight_couple_img {
+            position: absolute;
+            width: 100%;
+            max-width: 62%;
+            left: 0;
+        }
+
+        img.group_flower {
+            position: absolute;
+            width: 100%;
+            max-width: 68%;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
