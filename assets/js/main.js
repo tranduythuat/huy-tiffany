@@ -129,7 +129,7 @@ function toggleQR(e) {
   Swal.fire({
       title: "",
       text: "",
-      imageUrl: "assets/images/couple/IMG_2584.webp",
+      imageUrl: "https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/tu-huy/IMG_2584-optimized.webp",
       imageWidth: '100%',
       imageHeight: "auto",
       imageAlt: "Custom image",

@@ -24,17 +24,19 @@
             .sub-title {
                 text-transform: uppercase;
             }
-    
+
             .description {
                 line-height: 1.8;
                 margin: 10% 0 2%;
                 text-transform: uppercase;
 
             }
+
             .vi {
                 line-height: 1.8;
                 margin-bottom: 2%;
             }
+
             span.bold {
                 font-family: $font-gothamBold;
             }
@@ -54,6 +56,7 @@
 
         .divider {
             margin: 7% 0 10%;
+
             img {
                 max-width: 132px;
                 width: 100%;
@@ -79,7 +82,7 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 transition: background 0.3s ease;
-                margin:2% 0 2%;
+                margin: 2% 0 2%;
                 display: block;
             }
         }
@@ -95,6 +98,7 @@
     @media (max-width: 500px) {
         .content {
             font-size: calc((10 / 500) * 100vw);
+
             .divider {
                 img {
                     max-width: calc((132 / 500) * 100vw);
@@ -106,6 +110,7 @@
                     font-size: calc((45 / 500) * 100vw);
                 }
             }
+
             .action-btn {
                 font-size: calc((9.11 / 500) * 100vw);
             }
@@ -115,7 +120,7 @@
                     font-size: calc((9.11 / 500) * 100vw);
                 }
             }
-    
+
         }
     }
 }
@@ -123,28 +128,28 @@
 .qrcode-box {
     display: flex;
     flex-direction: row-reverse;
-  }
-  
-  .qrcode-box .item  {
+}
+
+.qrcode-box .item {
     width: 100%;
-    margin-bottom: 6%;
     font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  
-  .qrcode-box .item .info {
+}
+
+.qrcode-box .item .info {
     margin-bottom: 2%;
-  }
-  
-  .qrcode-box .item .qrcode-img {
+    text-transform: uppercase;
+}
+
+.qrcode-box .item .qrcode-img {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .qrcode-box .item .qrcode-img img {
+}
+
+.qrcode-box .item .qrcode-img img {
     width: 30%;
     border-radius: 10px;
     display: flex;
@@ -152,18 +157,19 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-  }
-  div:where(.swal2-container) div:where(.swal2-html-container) {
-    padding: 0 !important;;
-  }
-  
-  /* QR code */
-  div:where(.swal2-container) img:where(.swal2-image) {
-    margin: 0 auto 1em !important;
-  }
+}
 
-  @media (max-width: 500px) {
-      div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+div:where(.swal2-container) div:where(.swal2-html-container) {
+    padding: 0 !important;
+}
+
+/* QR code */
+div:where(.swal2-container) img:where(.swal2-image) {
+    margin: 0 auto 1em !important;
+}
+
+@media (max-width: 500px) {
+    div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
         font-size: calc((16 / 480) * 100vw);
-      }
-  }
+    }
+}
