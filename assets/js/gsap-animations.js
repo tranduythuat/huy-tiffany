@@ -38,6 +38,47 @@ function gsapFadeIn(selector) {
   });
 }
 
+function gsapFadeInThenYoyo(selector) {
+  gsap.utils.toArray(selector).forEach((el) => {
+    let sway;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    tl.fromTo(
+      el,
+      {
+        opacity: 0,
+        y: 50,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      }
+    );
+
+    tl.call(() => {
+      gsap.to(el, {
+        rotation: () => gsap.utils.random(-6, 6),
+        y: "+=3",
+        duration: 2,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+    });
+  })
+}
+
 function gsapFadeRight(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     gsap.fromTo(
@@ -175,6 +216,69 @@ function gsapRotateBottomRight(selector) {
     });
   });
 }
+
+function gsapRotateBottomLeftThenYoyo(selector) {
+  gsap.utils.toArray(selector).forEach((el) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    tl.from(el, {
+      rotation: -55,
+      scale: 0.8,
+      y: 50,
+      opacity: 0,
+      duration: 1.2,
+      ease: "back.out(1.2)",
+      transformOrigin: "left bottom",
+    });
+
+    tl.to(el, {
+      rotation: () => gsap.utils.random(-1.2, 1.2),
+      duration: () => gsap.utils.random(2.8, 4.2),
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+      transformOrigin: "right bottom"
+    });
+  })
+}
+
+function gsapRotateBottomRightThenYoyo(selector) {
+  gsap.utils.toArray(selector).forEach((el) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    tl.from(el, {
+      rotation: 55,
+      scale: 0.8,
+      y: 50,
+      opacity: 0,
+      duration: 1.2,
+      ease: "back.out(1.2)",
+      transformOrigin: "right bottom",
+    });
+
+    tl.to(el, {
+      rotation: () => gsap.utils.random(-1.2, 1.2),
+      duration: () => gsap.utils.random(2.8, 4.2),
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+      transformOrigin: "right bottom"
+    });
+  })
+}
+
 
 function gsapRollInLeft(selector) {
   gsap.utils.toArray(selector).forEach((el) => {

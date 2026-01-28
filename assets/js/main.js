@@ -1,12 +1,10 @@
 // Kích hoạt ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
-
 // Gọi các hiệu ứng có sẵn
 document.addEventListener("DOMContentLoaded", () => {
   const mainSwiper = new Swiper(".main-swiper", {
     spaceBetween: 10,
     navigation: {
-      nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     pagination: {
@@ -29,12 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsapFlipIn(".animate-flip");
   gsapFadeIn(".fade-in");
+  gsapFadeInThenYoyo(".fade-in-yoyo");
   gsapFadeRight(".fade-right");
   gsapFadeLeft(".fade-left");
   gsapFadeUp(".fade-up");
   gsapFadeDown(".fade-down");
   gsapRotateBottomLeft(".rotate-bl");
   gsapRotateBottomRight(".rotate-br");
+  gsapRotateBottomLeftThenYoyo(".rotate-bl-yoyo");
+  gsapRotateBottomRightThenYoyo(".rotate-br-yoyo");
   gsapFlipVerticalLeft(".flip-vertical-left");
   gsapRollInLeft(".roll-in-left");
   gsap_rotate_bl__float(".rotate-bl--float");

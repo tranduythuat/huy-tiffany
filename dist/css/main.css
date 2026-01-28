@@ -161,10 +161,10 @@ header {
 
 .hero {
   width: 100%;
-  aspect-ratio: 500/750;
-  background: url("../../assets/images/hero_bg.png") no-repeat center/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/tu-huy/IMG_1626.webp") no-repeat center/cover;
 }
 .hero .content {
+  aspect-ratio: 500/750;
+  background: url("../../assets/images/hero_bg.png") no-repeat center/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/tu-huy/IMG_1626.webp") no-repeat center/cover;
   width: 100%;
   height: 100%;
   display: flex;
@@ -338,7 +338,7 @@ header {
     font-size: 6.7vw;
   }
   .invite .content .btn-wrap .map-btn {
-    font-size: 1.84vw;
+    font-size: 2.6vw;
     width: 31.6vw;
   }
   .invite .content .text-size-10 {
@@ -873,8 +873,8 @@ header {
 .memory-collage .content img.flower-collage-3 {
   width: 111px;
   height: auto;
-  top: -2%;
-  right: 28%;
+  top: -4%;
+  right: 26%;
 }
 @media (max-width: 500px) {
   .memory-collage .content .box-imgs:nth-child(2) {
