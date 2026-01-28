@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   gsapFlipIn(".animate-flip");
+  gsapFlipInThenYoyo(".animate-flip-yoyo");
   gsapFadeIn(".fade-in");
   gsapFadeInThenYoyo(".fade-in-yoyo");
   gsapFadeRight(".fade-right");

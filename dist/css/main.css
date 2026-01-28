@@ -126,7 +126,7 @@ header {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.animate-flip {
+.animate-flip, .animate-flip-yoyo {
   transform-origin: left center;
   transform: rotateY(-120deg) scale(0.9);
   opacity: 0;
@@ -135,7 +135,7 @@ header {
   transition: none;
 }
 
-.animate-flip.active {
+.animate-flip.active, .animate-flip-yoyo.active {
   opacity: 1;
   transform: rotateY(0deg);
 }
