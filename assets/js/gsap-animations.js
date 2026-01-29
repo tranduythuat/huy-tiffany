@@ -18,22 +18,6 @@ function gsapFlipIn(selector) {
 }
 
 function gsapFlipInThenYoyo(selector) {
-  // gsap.utils.toArray(selector).forEach((el) => {
-  //   gsap.to(el, {
-  //     rotateY: 0,
-  //     scale: 1,
-  //     filter: "brightness(1)",
-  //     opacity: 1,
-  //     duration: 2,
-  //     ease: "back.out(1.5)",
-  //     scrollTrigger: {
-  //       trigger: el,
-  //       start: "top 80%",
-  //       toggleActions: "play none none reverse",
-  //     },
-  //   });
-  // });
-
   gsap.utils.toArray(selector).forEach((el) => {
     let tl = gsap.timeline({
       scrollTrigger: {

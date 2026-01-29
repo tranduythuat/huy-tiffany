@@ -164,8 +164,9 @@ async function handleFormSubmit(e) {
   const {
     name: name,
     confirm: confirm,
-    attendance: attendance,
-    dietary: dietary,
+    phone: phone,
+    vegetarian: vegetarian,
+    guest_info: guest_info,
     other: other,
     wish: wish,
   } = data;
@@ -182,7 +183,7 @@ async function handleFormSubmit(e) {
     },
   });
 
-  const url = "?sheet=confirm";
+  const url = "https://script.google.com/macros/s/AKfycbyOFmUbZd2LwQQGtX0N5aNc7PcGONw6wBLOe9hvwOU_rxcWK_Lv4tPvx5_e1b6kJz9rtA/exec?sheet=confirm";
 
   try {
     const res = await fetch(url, {
@@ -191,15 +192,25 @@ async function handleFormSubmit(e) {
       body: new URLSearchParams({
         name,
         confirm,
-        attendance,
-        dietary,
-        other,
+        phone,
+        guest_info,
+        vegetarian,
         wish
       }),
     });
 
     const result = await res.json().catch(() => ({}));
     console.log("Server response:", result);
+    if (Object.keys(result).length === 0) {
+      Swal.fire({
+        title: "Lỗi!",
+        text: "OPPS! Không tìm thấy server",
+        icon: "error",
+        confirmButtonText: "Thử lại",
+        confirmButtonColor: "#000",
+      });
+      return;
+    }
 
     form.reset();
 
