@@ -996,7 +996,6 @@ header {
 
 .qrcode-box .item {
   width: 100%;
-  font-size: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1004,6 +1003,8 @@ header {
 
 .qrcode-box .item .info {
   margin-bottom: 2%;
+  font-size: 14px;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -1034,7 +1035,13 @@ div:where(.swal2-container) img:where(.swal2-image) {
 
 @media (max-width: 500px) {
   div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-    font-size: 3.3333333333vw;
+    font-size: 3.2vw;
+  }
+  .qrcode-box .item .info {
+    font-size: 2.8vw;
+  }
+  div:where(.swal2-container) div:where(.swal2-actions) {
+    margin: 4vw;
   }
 }
 .end {

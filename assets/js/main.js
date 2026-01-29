@@ -140,12 +140,11 @@ function toggleQR(e) {
           <div class="qrcode-box">
               <div class="item">
                   <div class="info">
-                      <p>Tên TK: Tiffany Hoang</p>
-                      <p>Số TK: xxxx</p>
-                      <p>Ngân hàng: xxxx</p>
+                      <p>Tiffany Hoang</p>
+                      <p>215-980-3673</p>
                   </div>
                   <div class="qrcode-img">
-                      <img src="assets/images/qrcode.jpeg" alt="">
+                      <img src="assets/images/qrcode.jpg" alt="">
                   </div>
               </div>
           </div>
